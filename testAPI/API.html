@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+
+<body>
+    <div id="videoContainer"></div>
+    <script type="text/javascript">
+      // Définir l'URL de l'API
+      var apiUrl = 'https://theaudiodb.com/api/v1/json/2/mvid.php?i=112024';
+  
+      // Obtenir une référence à l'élément <div> avec l'ID "videoContainer"
+      var videoContainer = document.getElementById("videoContainer");
+  
+      // Faire une requête à l'API pour récupérer les données
+      fetch(apiUrl)
+        .then(response => response.json()) // Analyser la réponse JSON
+        .then(data => {
+          // Vérifier si les données sont présentes et si elles contiennent un tableau "mvids"
+          if (data && data.mvids) {
+            data.mvids.forEach(videoInfo => {
+              // Créer un élément <div> pour chaque vidéo
+              var videoDiv = document.createElement("div");
+  
+              // Remplir l'élément <div> avec les informations de la vidéo
+              videoDiv.innerHTML = "<h2>Artiste : " + videoInfo.strArtist + "</h2>" +
+                                   "<h3>Titre de la musique : " + videoInfo.strTrack + "</h3>" +
+                                   '<iframe width="560" height="315" src="' + videoInfo.strMusicVid + '" frameborder="0" allowfullscreen></iframe>';
+  
+              // Ajouter l'élément <div> contenant la vidéo au conteneur
+              videoContainer.appendChild(videoDiv);
+            });
+          } else {
+            console.error("Les données de l'API ne sont pas au format attendu.");
+          }
+        })
+        .catch(error => {
+          console.error("Erreur lors de la récupération des données de l'API : " + error);
+        });
+
+//définit l'URL de l'API dans la variable apiUrl.
+//récupère une référence à l'élément <div> avec l'ID "videoContainer" en utilisant document.getElementById.
+//effectue une requête à l'API en utilisant fetch pour obtenir les données JSON.
+//Une fois les données récupérées, vérifie si les données sont au format attendu, c'est-à-dire si elles contiennent un tableau "mvids".
+//Si les données sont au bon format, parcourt chaque élément du tableau "mvids" et crée un élément <div> pour chaque vidéo.
+//remplit chaque élément <div> avec les informations de la vidéo, y compris l'artiste, le titre de la musique et l'iframe de la vidéo.
+//ajoute chaque élément <div> au conteneur "videoContainer" pour afficher les vidéos dans la page.
+    </script>
+    </script>
+</body>
+
+</html>

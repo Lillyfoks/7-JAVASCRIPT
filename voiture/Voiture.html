@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiture</title>
+    <script type="text/javascript" src="Car.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+
+        let car1 = new Car("DS 7 Crossback", "Citroen", "rouge");
+        let car2 = new Car("X2", "BMW", "bleue" , 100000 , "hybride");
+       
+
+        /* tableau d'objet (nom technique d'une collection d'objet) */
+        /* 3 façons de l'écrire */
+        let cars=[car1, car2];
+        console.log(cars.toString());
+
+        for(let i=0;i<cars.length;i++) {
+            console.log(cars[i].toString());
+        }
+
+        cars.forEach(function(car) { /* "car" = l'objet du tableau - Cette boucle parcours l'intégralité du tableau */
+            console.log(cars.toString());
+        })
+
+        /* avec l'accesseur direct */
+        cars.forEach(function(car) { /* "car" = l'objet du tableau - Cette boucle parcours l'intégralité du tableau */
+            console.log(car.getEngine());
+        })
+
+        /* modification propriété en direct */
+         /* 2 façons de l'écrire */
+        car1.engine="diesel";
+        car1.setEngine("diesel");
+        console.log(car1);
+
+        console.log(car2.kms);
+        car2.drive(10);
+        console.log(car2.kms);
+        car2.drive(40);
+        console.log(car2.kms);
+        car2.drive(650);
+        console.log(car2.kms);
+
+        car2.setKms(car2.getKms(+650)) ; /* autre version de drive */
+        console.log(car2.kms);
+
+        console.log(cars);
+
+    </script>
+
+</body>
+
+</html>

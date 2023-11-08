@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: lightblue;
+}
+
+.buttonsong {
+  display: flex;
+  flex-direction: column;
+}
+
+.up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  border: none;
+  background-color: lightblue;
+  color: rgb(226, 125, 142);
+  font-size: 15pt;
+  margin: 5px;
+}
+
+.down {
+  display: flex;
+  flex-direction: row;
+}
+
+.musique {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.searchbar input {
+height: 23px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.left {
+  width: 20%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightsalmon;
+}
+.link {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.link a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+
+}
+
+.playlist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+}
+
+.pochette {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 5%;
+  background-color: lightgoldenrodyellow;
+  padding-top: 2%;
+}
+
+.artiste {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artiste img {
+  width: 80%;
+}
+
+
+.artiste h1, .artiste h2 {
+  margin: 5px;
+}
+

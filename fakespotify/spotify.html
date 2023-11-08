@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fakeSpotify</title>
+    <link rel="stylesheet" href="index.css">
+    </link>
+    <script src="https://kit.fontawesome.com/2f3dd775f5.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="init()">
+    <header>
+        <section class="buttonsong">
+            <section class="up">
+                <button type="button" onclick="précédent()"><i class="fa-solid fa-circle-arrow-left"></i></button>
+                <button type="button" id="playorpause" onclick="lecturepause()"><i
+                        class="fa-solid fa-play"></i></button>
+                <button type="button" onclick="suivant()"><i class="fa-solid fa-circle-arrow-right"></i></button>
+            </section>
+            <section class="down">
+                <button type="button" onclick="volumemoins()"><i class="fa-solid fa-volume-low"></i></button>
+                <input type="range" id="rangevolume" min="0" max="1" step="0.1" value="1" onchange="volumechange()">
+                <button type="button" onclick="volumeplus()"><i class="fa-solid fa-volume-high"></i></button>
+            </section>
+        </section>
+        <section class="musique">
+            <h1 id="artiste"></h1>
+            <h2 id="titre"></h2>
+            <section class="time">
+                <audio id="lecteur" ontimeupdate="progression()" ondurationchange="changeduration()"></audio>
+                <input type="range" id="songduration" name="songduration" min="0" step="1" value="0"
+                    oninput="duration()">
+            </section>
+        </section>
+        <section class="search">
+            <form action="#" class="searchbar">
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <input id="recherche" oninput="search()" type="search" placeholder="recherche" name="q">
+            </form>
+        </section>
+        <!-- les "mots()" sont des appellations des fonctions que nous créons ensuite sur le fichier JS -->
+    </header>
+    <main>
+        <section class="left">
+            <aside class="link">
+                <a href="#">Music</a>
+                <a href="#">Vidéos</a>
+                <a href="#">Podcasts</a>
+            </aside>
+        </section>
+        <section class="playlist">
+            <section id="cards" class="pochette">
+                <!--<article class="artiste">
+                    <img src="img/340/1.jpg" alt="pochette">
+                    <h1>TITRE1</h1>
+                    <h2>Nom artiste1</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/2.jpg" alt="pochette">
+                    <h1>TITRE2</h1>
+                    <h2>Nom artiste2</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/3.jpg" alt="pochette">
+                    <h1>TITRE3</h1>
+                    <h2>Nom artiste3</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/4.jpg" alt="pochette">
+                    <h1>TITRE4</h1>
+                    <h2>Nom artiste4</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/5.jpg" alt="pochette">
+                    <h1>TITRE5</h1>
+                    <h2>Nom artiste5</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/6.jpg" alt="pochette">
+                    <h1>TITRE6</h1>
+                    <h2>Nom artiste6</h2>
+                </article>
+                <article class="artiste">
+                    <img src="img/340/7.jpg" alt="pochette">
+                    <h1>TITRE7</h1>
+                    <h2>Nom artiste7</h2>
+                </article>-->
+            </section>
+        </section>
+        <section id="search-results"></section>
+    </main>
+    <script type="text/javascript" src="spotify.js"></script>
+</body>
+
+</html>
